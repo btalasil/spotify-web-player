@@ -311,10 +311,11 @@ a {
     gap: 1rem;
 }
 
-
 /* ------------------------------------
-      MOBILE RESPONSIVENESS IMPROVED
---------------------------------------*/
+        MOBILE RESPONSIVENESS
+-------------------------------------- */
+
+/* Tablet */
 @media (max-width: 900px) {
 
     .sidebar {
@@ -334,10 +335,9 @@ a {
     }
 }
 
-/* Phone Screens */
+/* Phone */
 @media (max-width: 600px) {
 
-    /* Sticky nav cleaner */
     .sticky-nav {
         padding: 0.5rem 0;
     }
@@ -347,9 +347,12 @@ a {
         margin-top: 1rem;
     }
 
+    /* Better mobile layout: 2 cards per row */
     .cards-container {
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
         gap: 1rem;
+        padding: 0 0.5rem;
     }
 
     .card {
@@ -358,7 +361,7 @@ a {
         padding: 1rem;
     }
 
-    /* Music Player Mobile Layout */
+    /* Music Player Mobile */
     .music-player {
         height: auto;
         flex-direction: column;
@@ -386,10 +389,8 @@ a {
         font-size: 0.65rem;
     }
 
-    /* Images resize nicely */
     .album-cover {
         width: 48px;
         height: 48px;
     }
 }
-
