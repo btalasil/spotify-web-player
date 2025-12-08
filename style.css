@@ -1,4 +1,3 @@
-/* ------------------ GLOBAL ------------------ */
 
 body {
     font-family: 'Montserrat', sans-serif;
@@ -8,7 +7,7 @@ body {
     overflow: auto;
 }
 
-/* Layout */
+
 .main {
     display: flex;
     min-height: 100vh;
@@ -20,7 +19,7 @@ a {
     color: white;
 }
 
-/* ------------------ SIDEBAR ------------------ */
+
 
 .sidebar {
     background-color: black;
@@ -34,10 +33,10 @@ a {
     height: 100vh;
     overflow-y: auto;
 
-    padding-bottom: 100px; /* so footer doesn't hide content */
+    padding-bottom: 100px;
 }
 
-/* NAV SECTION */
+
 
 .nav {
     background-color: #121212;
@@ -68,15 +67,14 @@ a {
     font-size: 1.25rem;
 }
 
-/* LIBRARY SECTION */
+
 
 .library {
     background-color: #121212;
     border-radius: 1rem;
     margin-top: 0.5rem;
     padding: 0.5rem 0.75rem;
-
-    min-height: calc(100vh - 150px); /* restores tall background */
+    min-height: calc(100vh - 150px);
 }
 
 .options {
@@ -138,16 +136,14 @@ a {
     color: white;
 }
 
-/* ------------------ MAIN CONTENT ------------------ */
 
 .main-content {
     background-color: #121212;
     flex: 1;
     border-radius: 1rem;
 
-    margin-left: calc(340px + 0.5rem); /* Restore spacing between sidebar & content */
-
-    height: calc(100vh - 90px);  /* Avoid footer overlap */
+    margin-left: calc(340px + 0.5rem);
+    height: calc(100vh - 90px);
     overflow-y: auto;
 
     padding: 0 1.5rem 1.5rem 1.5rem;
@@ -185,7 +181,7 @@ a {
     }
 }
 
-/* ------------------ CARDS ------------------ */
+
 
 .card {
     background-color: #232323;
@@ -215,7 +211,6 @@ a {
     opacity: 0.5;
 }
 
-/* ------------------ MUSIC PLAYER FOOTER ------------------ */
 
 .music-player {
     background-color: #000;
@@ -231,8 +226,6 @@ a {
     z-index: 1000;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
-
-/* LEFT: Album section */
 
 .album {
     width: 25%;
@@ -274,7 +267,7 @@ a {
     opacity: 1;
 }
 
-/* CENTER: Player controls */
+
 
 .player {
     width: 50%;
@@ -326,4 +319,138 @@ a {
     display: flex;
     justify-content: flex-end;
     gap: 1rem;
+}
+
+
+
+@media (max-width: 1024px) {
+    .sidebar {
+        width: 250px;
+    }
+
+    .main-content {
+        margin-left: 260px;
+    }
+
+    .card {
+        width: 140px;
+        margin-left: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .sidebar {
+        width: 80px;
+        padding: 0.75rem;
+    }
+
+    .nav-option a,
+    .lib-option a,
+    .box,
+    .box button {
+        display: none;
+    }
+
+    .library {
+        min-height: auto;
+        padding: 1rem;
+    }
+
+    .lib-option img {
+        width: 1.8rem;
+        height: 1.8rem;
+    }
+
+    .main-content {
+        margin-left: 90px;
+        padding: 1rem;
+    }
+
+    .sticky-nav {
+        padding: 0.5rem 0;
+    }
+
+    .sticky-nav-options .badge {
+        display: none;
+    }
+
+    .cards-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .card {
+        margin: 0;
+        width: 100%;
+    }
+
+    .music-player {
+        height: auto;
+        flex-wrap: wrap;
+        padding: 1rem;
+        justify-content: space-between;
+    }
+
+    .album {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+
+    .player {
+        width: 100%;
+        margin-top: 0.5rem;
+    }
+
+    .controls {
+        width: 100%;
+        justify-content: flex-start;
+        margin-top: 0.5rem;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .sidebar {
+        display: none;
+    }
+
+    .main-content {
+        margin-left: 0;
+        padding-bottom: 120px;
+    }
+
+    .cards-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    .card-title {
+        font-size: 0.9rem;
+    }
+
+    .card-info {
+        font-size: 0.7rem;
+    }
+
+    .music-player {
+        flex-direction: column;
+        align-items: flex-start;
+        height: auto;
+        gap: 0.75rem;
+        padding: 1rem;
+    }
+
+    .player-controls img {
+        height: 1rem;
+    }
+
+    .progress-bar {
+        height: 3px;
+    }
 }
